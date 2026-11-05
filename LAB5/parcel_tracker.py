@@ -47,7 +47,7 @@ def advance_status(tracking_id):
 
 def shipping_cost(weight_kg):
     """Calculate shipping cost based on parcel weight in kilograms."""
-    cost=50
+    cost = 50
 
     if weight_kg > 1:
         cost += (weight_kg - 1) * 30
@@ -106,9 +106,12 @@ def main():
         print("  with courier:", is_with_courier(tracking_id))
         print("  cost:", shipping_cost(parcels[tracking_id]["weight"]))
 
-    print(track_parcel("TRK00000")) # unknown id
+    print(track_parcel("TRK00000"))
 
     delivery_otp = secrets.randbelow(9000) + 1000
     print("Delivery OTP for", third, "is", delivery_otp)
-    print("Parcels booked today:",len(parcels))
-main()
+    print("Parcels booked today:", len(parcels))
+
+
+if __name__ == "__main__":
+    main()
